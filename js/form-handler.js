@@ -5,7 +5,8 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     const email = document.getElementById('email').value;
     const description = document.getElementById('description').value;
     const popup = document.getElementById('popup');
-
+    popup.className = "text-white text-center";
+    popup.innerText = "processing...";
     if (name === "" || email === "" || description === "") {
         popup.className = "text-red-500 text-center";
         popup.innerText = "Kindly fill complete form";
@@ -18,8 +19,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
         email: email,
         description: description
     };
-// DEPLOYMENT ID - ( AKfycbyBmuXR-CVCm0q3mAiSPUBpshGF2wAut7GovPvO8L4bsdKZGAwL0iAvZEThs2YQpKk- )
-// IF needed in future
+
     fetch('https://script.google.com/macros/s/AKfycbyBmuXR-CVCm0q3mAiSPUBpshGF2wAut7GovPvO8L4bsdKZGAwL0iAvZEThs2YQpKk-/exec', {
         method: 'POST',
         mode: 'no-cors',
