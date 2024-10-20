@@ -31,8 +31,18 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
         popup.className = "text-green-500 text-center ";
         popup.innerText = "Successfully Submitted";
         popup.classList.remove('hidden');
+
+        setTimeout(() => {
+        popup.classList.add('hidden'); // Hide the popup
+        }, 5000); // 8 seconds
+        
         document.getElementById('myForm').reset();
     }).catch((error) => {
         console.error('Error:', error);
     });
 });
+
+
+window.onload = function() {
+    window.scrollTo(0, 0); // Scroll to the top
+};
