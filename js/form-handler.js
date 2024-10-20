@@ -10,6 +10,9 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     if (name === "" || email === "" || description === "") {
         popup.className = "text-red-500 text-center";
         popup.innerText = "Kindly fill complete form";
+        setTimeout(() => {
+        popup.classList.add('hidden'); // Hide the popup
+        }, 5000); // 5 seconds
         popup.classList.remove('hidden');
         return;
     }
@@ -34,7 +37,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
 
         setTimeout(() => {
         popup.classList.add('hidden'); // Hide the popup
-        }, 5000); // 8 seconds
+        }, 5000); // 5 seconds
         
         document.getElementById('myForm').reset();
     }).catch((error) => {
